@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de1c6d271c025945b2493da3e8e6f26, type: 3}
+  m_Name: Bathtub
+  m_EditorClassIdentifier: Assembly-CSharp::InspectDialogue
+  dialogueLines:
+  - There's still water left in the  <color=#CB5454>bathtub</color>.
+  - I remember some species naturally posses magic that allows them to teleport between 
+    <color=#CB5454>bodies of water</color>.
+  - I guess a filled bathtub counts in an emergency.

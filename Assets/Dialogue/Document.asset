@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de1c6d271c025945b2493da3e8e6f26, type: 3}
+  m_Name: Document
+  m_EditorClassIdentifier: Assembly-CSharp::InspectDialogue
+  dialogueLines:
+  - Bills and documents. All of them are addressed to  <color=#CB5454>Liria Arrinelle</color>.
+  - Must be the name of the owner.
