@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: bodies of water
   clueText: bodies of water
-  snapDistance: 120
+  snapDistance: 100
 --- !u!114 &235983809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2222,7 +2222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: Liria Arrinelle
   clueText: Liria Arrinelle
-  snapDistance: 100
+  snapDistance: 80
 --- !u!114 &798046204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2973,7 +2973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: bathtub
   clueText: bathtub
-  snapDistance: 60
+  snapDistance: 80
 --- !u!114 &882121734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5638,7 +5638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: minor demon
   clueText: minor demon
-  snapDistance: 100
+  snapDistance: 60
 --- !u!114 &2083841488
 MonoBehaviour:
   m_ObjectHideFlags: 0
