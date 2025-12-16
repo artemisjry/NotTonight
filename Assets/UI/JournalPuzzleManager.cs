@@ -3,12 +3,13 @@ using TMPro;
 using System;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using System.Collections; // ✅ REQUIRED for IEnumerator
 
 public class JournalPuzzleManager : MonoBehaviour
 {
     [Header("Passage")]
     [TextArea(4, 10)]
-    public string passageText;      // Text containing {slots}
+    public string passageText;
     public TMP_Text passageTextTMP;
 
     [Header("Slots")]
@@ -23,6 +24,15 @@ public class JournalPuzzleManager : MonoBehaviour
     [Header("Slot Display")]
     public char underlineCharacter = '_';
 
+    // ---------------- NEW ----------------
+    [Header("End Game")]
+    public CanvasGroup fadeCanvas;      // Fullscreen black panel
+    public TMP_Text endText;             // Center text
+    public AudioClip puzzleSolvedSound;
+    public float fadeSpeed = 1.2f;
+    public float textDelay = 2f;
+    // ------------------------------------
+
     void Awake()
     {
         GenerateSlotsFromPassage();
@@ -34,43 +44,35 @@ public class JournalPuzzleManager : MonoBehaviour
     private void GenerateSlotsFromPassage()
     {
         if (passageTextTMP == null)
-        {
-            Debug.LogError("Passage TMP_Text is missing.");
             return;
-        }
 
         List<PassageSlotData> slotList = new List<PassageSlotData>();
         string workingText = passageText;
 
         int offset = 0;
-
         Regex regex = new Regex(@"\{(.*?)\}");
         MatchCollection matches = regex.Matches(passageText);
 
         foreach (Match match in matches)
         {
-            string slotText = match.Groups[1].Value; // text inside {}
-            int originalLength = match.Length;
-
+            string slotText = match.Groups[1].Value;
             int startIndex = match.Index + offset;
-            int underlineLength = slotText.Length;
 
-            // Create slot
             PassageSlotData slot = new PassageSlotData
             {
-                slotId = slotText,          // 🔑 slotId = text inside {}
+                slotId = slotText,
                 startIndex = startIndex,
-                length = underlineLength,
+                length = slotText.Length,
                 filled = false
             };
+
             slotList.Add(slot);
 
-            // Replace {text} with _____
-            string underline = new string(underlineCharacter, underlineLength);
-            workingText = workingText.Remove(startIndex, originalLength)
+            string underline = new string(underlineCharacter, slotText.Length);
+            workingText = workingText.Remove(startIndex, match.Length)
                                      .Insert(startIndex, underline);
 
-            offset += underlineLength - originalLength;
+            offset += underline.Length - match.Length;
         }
 
         slotsData = slotList.ToArray();
@@ -87,12 +89,11 @@ public class JournalPuzzleManager : MonoBehaviour
             return;
 
         string oldText = passageTextTMP.text;
-        string newText =
+        passageTextTMP.text =
             oldText.Substring(0, slot.startIndex) +
             displayText +
             oldText.Substring(slot.startIndex + slot.length);
 
-        passageTextTMP.text = newText;
         slot.filled = true;
 
         int diff = displayText.Length - slot.length;
@@ -102,9 +103,58 @@ public class JournalPuzzleManager : MonoBehaviour
                 s.startIndex += diff;
         }
 
+        // 🔥 CHANGED PART 🔥
         if (Array.TrueForAll(slotsData, s => s.filled))
         {
-            Debug.Log("Puzzle Solved!");
+            StartCoroutine(EndGameSequence());
         }
+    }
+
+    // --------------------------------------------------
+    // END GAME SEQUENCE
+    // --------------------------------------------------
+    IEnumerator EndGameSequence()
+    {
+        PauseController.SetPaused(true);
+
+        if (audioSource && puzzleSolvedSound)
+            audioSource.PlayOneShot(puzzleSolvedSound);
+
+        fadeCanvas.gameObject.SetActive(true);
+        fadeCanvas.alpha = 0f;
+
+        // Fade to black
+        while (fadeCanvas.alpha < 1f)
+        {
+            fadeCanvas.alpha += Time.unscaledDeltaTime * fadeSpeed;
+            yield return null;
+        }
+
+        endText.gameObject.SetActive(true);
+        endText.text = "TO BE CONTINUED";
+        endText.alpha = 1f;
+
+        yield return new WaitForSecondsRealtime(textDelay);
+
+        // Fade text out
+        while (endText.alpha > 0f)
+        {
+            endText.alpha -= Time.unscaledDeltaTime * fadeSpeed;
+            yield return null;
+        }
+
+        // Fade text in with new message
+        endText.text = "Click Anywhere to Close";
+        while (endText.alpha < 1f)
+        {
+            endText.alpha += Time.unscaledDeltaTime * fadeSpeed;
+            yield return null;
+        }
+
+        // Wait for click
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        Application.Quit();
     }
 }

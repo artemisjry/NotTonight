@@ -860,10 +860,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 917584004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &202243948
 MonoBehaviour:
@@ -920,7 +920,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: bodies of water
   clueText: bodies of water
-  snapDistance: 100
+  snapDistance: 200
 --- !u!114 &235983809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1871,6 +1871,11 @@ MonoBehaviour:
   snapIncorrectSound: {fileID: 8300000, guid: 1faa36f5d984be44da35119024623bda, type: 3}
   audioSource: {fileID: 471751818}
   underlineCharacter: 95
+  fadeCanvas: {fileID: 917584005}
+  endText: {fileID: 202243948}
+  puzzleSolvedSound: {fileID: 8300000, guid: 1faa36f5d984be44da35119024623bda, type: 3}
+  fadeSpeed: 1.2
+  textDelay: 2
 --- !u!64 &514173251
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2217,7 +2222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: Liria Arrinelle
   clueText: Liria Arrinelle
-  snapDistance: 100
+  snapDistance: 200
 --- !u!114 &798046204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2460,7 +2465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: asleep
   clueText: asleep
-  snapDistance: 100
+  snapDistance: 200
 --- !u!114 &834935600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2968,7 +2973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: bathtub
   clueText: bathtub
-  snapDistance: 100
+  snapDistance: 200
 --- !u!114 &882121734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3433,7 +3438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: scales
   clueText: scales
-  snapDistance: 100
+  snapDistance: 200
 --- !u!114 &1159831921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4247,7 +4252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: no footage
   clueText: no footage
-  snapDistance: 100
+  snapDistance: 200
 --- !u!114 &1633502802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4964,7 +4969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: bathroom
   clueText: bathroom
-  snapDistance: 100
+  snapDistance: 200
 --- !u!114 &1910335528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5273,7 +5278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: siren
   clueText: siren
-  snapDistance: 100
+  snapDistance: 200
 --- !u!114 &1949385927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5439,7 +5444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: sulfur
   clueText: sulfur
-  snapDistance: 100
+  snapDistance: 200
 --- !u!114 &2036322925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5633,7 +5638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: minor demon
   clueText: minor demon
-  snapDistance: 100
+  snapDistance: 200
 --- !u!114 &2083841488
 MonoBehaviour:
   m_ObjectHideFlags: 0
