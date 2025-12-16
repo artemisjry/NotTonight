@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: bodies of water
   clueText: bodies of water
-  snapDistance: 200
+  snapDistance: 100
 --- !u!114 &235983809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2222,7 +2222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: Liria Arrinelle
   clueText: Liria Arrinelle
-  snapDistance: 200
+  snapDistance: 100
 --- !u!114 &798046204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2465,7 +2465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: asleep
   clueText: asleep
-  snapDistance: 200
+  snapDistance: 100
 --- !u!114 &834935600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2973,7 +2973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: bathtub
   clueText: bathtub
-  snapDistance: 200
+  snapDistance: 100
 --- !u!114 &882121734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3438,7 +3438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: scales
   clueText: scales
-  snapDistance: 200
+  snapDistance: 100
 --- !u!114 &1159831921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4252,7 +4252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: no footage
   clueText: no footage
-  snapDistance: 200
+  snapDistance: 100
 --- !u!114 &1633502802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4969,7 +4969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: bathroom
   clueText: bathroom
-  snapDistance: 200
+  snapDistance: 100
 --- !u!114 &1910335528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5278,7 +5278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: siren
   clueText: siren
-  snapDistance: 200
+  snapDistance: 100
 --- !u!114 &1949385927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5444,7 +5444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: sulfur
   clueText: sulfur
-  snapDistance: 200
+  snapDistance: 100
 --- !u!114 &2036322925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5638,7 +5638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: minor demon
   clueText: minor demon
-  snapDistance: 200
+  snapDistance: 100
 --- !u!114 &2083841488
 MonoBehaviour:
   m_ObjectHideFlags: 0
