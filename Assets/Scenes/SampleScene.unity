@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: bodies of water
   clueText: bodies of water
-  snapDistance: 60
+  snapDistance: 120
 --- !u!114 &235983809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2222,7 +2222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: Liria Arrinelle
   clueText: Liria Arrinelle
-  snapDistance: 60
+  snapDistance: 100
 --- !u!114 &798046204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4252,7 +4252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: no footage
   clueText: no footage
-  snapDistance: 60
+  snapDistance: 100
 --- !u!114 &1633502802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5610,7 +5610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2f3dd478dfd654fb674119e4337980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClueUnlockable
-  linkedObject: {fileID: 3045893796465360881}
+  linkedObject: {fileID: 1742517975865597014}
   unlocked: 0
 --- !u!225 &2083841486
 CanvasGroup:
@@ -5638,7 +5638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: minor demon
   clueText: minor demon
-  snapDistance: 60
+  snapDistance: 100
 --- !u!114 &2083841488
 MonoBehaviour:
   m_ObjectHideFlags: 0
