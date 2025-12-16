@@ -1,7 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class InteractablesManager : MonoBehaviour
 {
+    public static InteractablesManager Instance;
+
     [Header("Camera")]
     public Camera cam;
 
@@ -12,36 +15,72 @@ public class InteractablesManager : MonoBehaviour
     public Color hoverColor = Color.yellow;
 
     [Header("Audio")]
-    public AudioSource audioSource;   // Reference to an AudioSource
-    public AudioClip hoverSound;      // Sound to play on hover
-    public AudioClip clickSound;      // Sound to play on click
+    public AudioSource audioSource;
+    public AudioClip hoverSound;
+    public AudioClip clickSound;
+
+    [Header("Interaction Cooldown")]
+    [SerializeField] private float interactionCooldown = 0.3f;
+
+    private bool canInteract = true;
+    private float cooldownTimer;
 
     private GameObject hoveredObject;
     private Color hoveredOriginalColor;
-
     private GameObject selectedObject;
+
+    [SerializeField] PlayerController playerController;
+    [SerializeField] float distanceToInteract = 3f;
 
     void Start()
     {
         if (!cam) cam = Camera.main;
     }
 
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
+
     void Update()
     {
+        UpdateCooldown();
+
+        if (PauseController.IsGamePaused || !canInteract || DialogueController.Instance.IsDialogueActive)
+        {
+            ClearHover();
+            return;
+        }
+
         HandleHover();
 
         if (Input.GetMouseButtonDown(0))
             HandleClickSelection();
     }
 
-    // ----------------------------------------------------
-    //                     HOVER LOGIC
-    // ----------------------------------------------------
+
+    void UpdateCooldown()
+    {
+        if (cooldownTimer > 0f)
+        {
+            cooldownTimer -= Time.unscaledDeltaTime;
+
+            if (cooldownTimer <= 0f)
+                canInteract = true;
+        }
+    }
+
+    public void TriggerInteractionCooldown()
+    {
+        canInteract = false;
+        cooldownTimer = interactionCooldown;
+    }
+
     void HandleHover()
     {
-        if (PauseController.IsGamePaused)
-            return;
-
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
@@ -59,7 +98,6 @@ public class InteractablesManager : MonoBehaviour
 
                 r.material.color = hoverColor;
 
-                // Play hover sound once
                 if (audioSource != null && hoverSound != null)
                     audioSource.PlayOneShot(hoverSound);
             }
@@ -79,14 +117,8 @@ public class InteractablesManager : MonoBehaviour
         }
     }
 
-    // ----------------------------------------------------
-    //                   CLICK SELECTION LOGIC
-    // ----------------------------------------------------
     void HandleClickSelection()
     {
-        if (PauseController.IsGamePaused)
-            return;
-
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
@@ -95,21 +127,35 @@ public class InteractablesManager : MonoBehaviour
             selectedObject = hit.collider.gameObject;
             Debug.Log("Selected: " + selectedObject.name);
 
-            // Play click sound
             if (audioSource != null && clickSound != null)
                 audioSource.PlayOneShot(clickSound);
 
-            // Mark object as inspected if it has an InspectableObject
             InspectableObject inspectable = selectedObject.GetComponent<InspectableObject>();
             if (inspectable != null)
                 inspectable.Inspect();
 
-            // Trigger dialogue via central DialogueController
             Interactable interactable = selectedObject.GetComponent<Interactable>();
+            playerController.agent.destination = hit.point;
+
             if (interactable != null && interactable.dialogueData != null)
             {
-                DialogueController.Instance.StartDialogue(interactable.dialogueData);
+                StartCoroutine(WaitTillArrive(hit.point, interactable));
             }
         }
+    }
+
+    IEnumerator WaitTillArrive(Vector3 goal, Interactable interactable)
+    {
+        yield return null;
+
+        while (Vector3.Distance(playerController.transform.position, goal) > distanceToInteract)
+        {
+            if (Input.GetMouseButtonDown(0))
+                yield break;
+
+            yield return null;
+        }
+
+        DialogueController.Instance.StartDialogue(interactable.dialogueData);
     }
 }

@@ -4,7 +4,7 @@ using TMPro;
 public class ClueUnlockable : MonoBehaviour
 {
     [Header("Linked Object")]
-    public GameObject linkedObject;  // The object player must inspect
+    public GameObject linkedObject;  
     public bool unlocked = false;
 
     private TMP_Text clueText;
@@ -14,9 +14,8 @@ public class ClueUnlockable : MonoBehaviour
         clueText = GetComponent<TMP_Text>();
 
         if (clueText != null)
-            clueText.enabled = false; // Hide initially
+            clueText.enabled = false; 
 
-        // Optional: hide CanvasGroup if draggable
         var cg = GetComponent<CanvasGroup>();
         if (cg != null)
             cg.alpha = 0;
@@ -26,7 +25,6 @@ public class ClueUnlockable : MonoBehaviour
     {
         if (!unlocked && linkedObject != null)
         {
-            // Check if the linked object has been inspected
             var inspectable = linkedObject.GetComponent<InspectableObject>();
             if (inspectable != null && inspectable.inspected)
             {
@@ -39,7 +37,6 @@ public class ClueUnlockable : MonoBehaviour
     {
         unlocked = true;
 
-        // Show the clue
         if (clueText != null)
             clueText.enabled = true;
 
@@ -47,7 +44,6 @@ public class ClueUnlockable : MonoBehaviour
         if (cg != null)
             cg.alpha = 1;
 
-        // Enable drag if using ClueDraggable
         var draggable = GetComponent<ClueDraggable>();
         if (draggable != null)
             draggable.enabled = true;

@@ -859,10 +859,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 917584004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &202243948
 MonoBehaviour:
@@ -911,8 +911,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 120
-  m_fontSizeBase: 120
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -998,10 +998,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 582203862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -83.43518, y: 230.85791}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 360.5, y: 123.5}
+  m_SizeDelta: {x: -1600, y: -1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &235983806
 MonoBehaviour:
@@ -1042,7 +1042,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: bodies of water
-  displayText: bodies of water
+  clueText: bodies of water
+  snapDistance: 100
 --- !u!114 &235983809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,7 +1099,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1194,10 +1195,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1680918989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -142.75, y: -344.5}
-  m_SizeDelta: {x: 1111.5, y: 160}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &254034878
 MonoBehaviour:
@@ -1833,10 +1834,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 997557197}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &495692369
 MonoBehaviour:
@@ -1850,36 +1851,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 090a469fb2295f34fa24abb0cf6ac8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JournalPuzzleManager
+  passageText: "REPORT:\n\tUnauthorized usage of magic was detected at 3:42 a.m.
+    on November 23rd. Arrived at source of alert at 4:12am. Door was locked from
+    the inside when arrived, but the apartment was unoccupied when entered.\n\tCCTV
+    footage shows {Liria Arrinelle}, the owner of the apartment, entering around
+    7:23pm the previous night, but there was {no footage} of her leaving through
+    the front door. Traces of {sulfur} was found on carpet. There was a trail of
+    blood leading to the {bathroom}, and a few {scales} were found along with it.
+    \n\tIt is likely that the owner is a {siren}, and was attacked by a {minor demon}
+    for unknown reasons when she was {asleep}. She managed to repel the attacker
+    using her own magic, but was injured in the process. Hurt and scared, she escaped
+    through the {bathtub}. Searching nearby {bodies of water} may lead us to her.
+    Further investigation is needed."
   passageTextTMP: {fileID: 1168674561}
-  slots:
-  - slotId: slot_sulfur
-    startIndex: 405
-    length: 8
-    filled: 0
-  - slotId: slot_bathroom
-    startIndex: 477
-    length: 10
-    filled: 0
-  - slotId: slot_scales
-    startIndex: 499
-    length: 8
-    filled: 0
-  - slotId: slot_siren
-    startIndex: 573
-    length: 7
-    filled: 0
-  - slotId: slot_asleep
-    startIndex: 651
-    length: 8
-    filled: 0
-  - slotId: slot_bathtub
-    startIndex: 789
-    length: 9
-    filled: 0
-  screenFadeCanvasGroup: {fileID: 917584005}
-  endGameTextTMP: {fileID: 202243948}
-  fadeDuration: 1.5
-  messageDelay: 2
+  slotsData: []
+  pickUpSound: {fileID: 8300000, guid: 2b9de1ad32c1c064a96e4ecec5a18f64, type: 3}
+  snapCorrectSound: {fileID: 8300000, guid: 1e3f7969ca7c3d84bb4e1193a245dedc, type: 3}
+  snapIncorrectSound: {fileID: 8300000, guid: 1faa36f5d984be44da35119024623bda, type: 3}
+  audioSource: {fileID: 471751818}
+  underlineCharacter: 95
 --- !u!64 &514173251
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1946,8 +1936,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 228.5, y: -2.75}
-  m_SizeDelta: {x: -1363, y: -282.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &582203863
 MonoBehaviour:
@@ -2019,11 +2009,11 @@ RectTransform:
   - {fileID: 1168674560}
   m_Father: {fileID: 997557197}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -197.9696, y: 370.75}
-  m_SizeDelta: {x: 0, y: 741.5}
-  m_Pivot: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -436.25, y: 1.5}
+  m_SizeDelta: {x: -1443.5, y: -299}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &628681587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2038,142 +2028,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 0
---- !u!1 &684201207
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 684201208}
-  - component: {fileID: 684201210}
-  - component: {fileID: 684201209}
-  m_Layer: 5
-  m_Name: EndGameText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &684201208
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684201207}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 917584004}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -124}
-  m_SizeDelta: {x: 1000, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &684201209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684201207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: CLICK ANYWHERE TO QUIT GAME
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 46597ba40487b264c8f619b5a5f41f04, type: 2}
-  m_sharedMaterial: {fileID: 9222044674637369923, guid: 46597ba40487b264c8f619b5a5f41f04, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 54
-  m_fontSizeBase: 54
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &684201210
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684201207}
-  m_CullTransparentMesh: 1
 --- !u!65 &720794761
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2230,10 +2084,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 582203862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 61.417603, y: 125.81287}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 241, y: 214.5}
+  m_SizeDelta: {x: -1600, y: -1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &798046202
 CanvasGroup:
@@ -2260,7 +2114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: Liria Arrinelle
-  displayText: Liria Arrinelle
+  clueText: Liria Arrinelle
+  snapDistance: 100
 --- !u!114 &798046204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2316,7 +2171,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2458,10 +2313,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 582203862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169.18811, y: -124.90039}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 100.5, y: 96.5}
+  m_SizeDelta: {x: -1600, y: -1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &834935597
 MonoBehaviour:
@@ -2502,7 +2357,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: asleep
-  displayText: asleep
+  clueText: asleep
+  snapDistance: 100
 --- !u!114 &834935600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2558,7 +2414,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2965,10 +2821,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 582203862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -151.55322}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 119, y: -326}
+  m_SizeDelta: {x: -1600, y: -1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &882121731
 MonoBehaviour:
@@ -3009,7 +2865,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: bathtub
-  displayText: bathtub
+  clueText: bathtub
+  snapDistance: 100
 --- !u!114 &882121734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3065,7 +2922,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3141,7 +2998,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 202243947}
-  - {fileID: 684201208}
   m_Father: {fileID: 1878373487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3231,6 +3087,7 @@ GameObject:
   - component: {fileID: 997557199}
   - component: {fileID: 997557198}
   - component: {fileID: 997557200}
+  - component: {fileID: 997557201}
   m_Layer: 5
   m_Name: Journal
   m_TagString: Untagged
@@ -3316,6 +3173,20 @@ MonoBehaviour:
   hiddenPosition: {x: 0, y: -1000}
   shownPosition: {x: 0, y: 0}
   lerpSpeed: 8
+--- !u!114 &997557201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997557196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.AspectRatioFitter
+  m_AspectMode: 2
+  m_AspectRatio: 1.7777778
 --- !u!1 &1104184010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3430,10 +3301,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 582203862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 44.035156, y: 6.217163}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 82.5, y: 306.5}
+  m_SizeDelta: {x: -1600, y: -1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1159831918
 MonoBehaviour:
@@ -3474,7 +3345,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: scales
-  displayText: scales
+  clueText: scales
+  snapDistance: 100
 --- !u!114 &1159831921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3530,7 +3402,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3606,10 +3478,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 628681585}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -233, y: 0}
-  m_SizeDelta: {x: 466, y: 775}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1168674561
 MonoBehaviour:
@@ -3631,14 +3503,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "REPORT:\r\n\t\r\n\tUnauthorized usage of magic was detected at 3:42 a.m.
-    on November 23rd. Arrived at source of alert at 4:12am. Door was locked from
-    the inside when arrived, but the apartment was unoccupied when entered.\r\n\r\n\tCCTV
+  m_text: "REPORT:\r\n\tUnauthorized usage of magic was detected at 3:42 a.m. on
+    November 23rd. Arrived at source of alert at 4:12am. Door was locked from the
+    inside when arrived, but the apartment was unoccupied when entered.\r\n\tCCTV
     footage shows {Liria Arrinelle}, the owner of the apartment, entering around
     7:23pm the previous night, but there was {no footage} of her leaving through
     the front door. Traces of {sulfur} was found on carpet. There was a trail of
     blood leading to the {bathroom}, and a few {scales} were found along with it.
-    \r\n\t\r\n\tIt is likely that the owner is a {siren}, and was attacked by a {minor
+    \r\n\tIt is likely that the owner is a {siren}, and was attacked by a {minor
     demon} for unknown reasons when she was {asleep}. She managed to repel the attacker
     using her own magic, but was injured in the process. Hurt and scared, she escaped
     through the {bathtub}. Searching nearby {bodies of water} may lead us to her.
@@ -3669,7 +3541,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.35
+  m_fontSize: 30.15
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3759,6 +3631,9 @@ MonoBehaviour:
   audioSource: {fileID: 1223850047}
   hoverSound: {fileID: 8300000, guid: ba773f0eb254cda42980e0982ecb9918, type: 3}
   clickSound: {fileID: 8300000, guid: 0b310233858884e498344b73e46b1170, type: 3}
+  interactionCooldown: 0.3
+  playerController: {fileID: 153071254}
+  distanceToInteract: 1.5
 --- !u!4 &1223850046
 Transform:
   m_ObjectHideFlags: 0
@@ -3944,6 +3819,7 @@ GameObject:
   - component: {fileID: 1457536578}
   - component: {fileID: 1457536577}
   - component: {fileID: 1457536580}
+  - component: {fileID: 1457536581}
   m_Layer: 5
   m_Name: Open
   m_TagString: Untagged
@@ -3966,10 +3842,10 @@ RectTransform:
   - {fileID: 1845937906}
   m_Father: {fileID: 1878373487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 740, y: -340}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 751, y: -380.25}
+  m_SizeDelta: {x: 0, y: -0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1457536577
 MonoBehaviour:
@@ -4083,6 +3959,20 @@ MonoBehaviour:
   hoverSound: {fileID: 8300000, guid: ba773f0eb254cda42980e0982ecb9918, type: 3}
   clickSound: {fileID: 8300000, guid: 0b310233858884e498344b73e46b1170, type: 3}
   audioSource: {fileID: 471751818}
+--- !u!114 &1457536581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457536575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.AspectRatioFitter
+  m_AspectMode: 2
+  m_AspectRatio: 1.798981
 --- !u!114 &1623532365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4239,10 +4129,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 582203862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115.882324, y: 86.91168}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 376.5, y: -334.5}
+  m_SizeDelta: {x: -1600, y: -1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1633502800
 CanvasGroup:
@@ -4269,7 +4159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: no footage
-  displayText: no footage
+  clueText: no footage
+  snapDistance: 100
 --- !u!114 &1633502802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4325,7 +4216,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4418,10 +4309,10 @@ RectTransform:
   - {fileID: 877909013}
   m_Father: {fileID: 997557197}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 621.5, y: -371.5}
-  m_SizeDelta: {x: 200, y: 60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 634.5, y: -361.5}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1641930031
 MonoBehaviour:
@@ -4697,10 +4588,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1457536576}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -240}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -200}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1845937907
 MonoBehaviour:
@@ -4941,10 +4832,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 582203862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 44.035156, y: 6.217163}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 78, y: 0}
+  m_SizeDelta: {x: -1600, y: -1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1910335525
 MonoBehaviour:
@@ -4985,7 +4876,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: bathroom
-  displayText: bathroom
+  clueText: bathroom
+  snapDistance: 100
 --- !u!114 &1910335528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5041,7 +4933,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -5249,10 +5141,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 582203862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: -247.73544}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 263, y: 0}
+  m_SizeDelta: {x: -1600, y: -1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1949385924
 MonoBehaviour:
@@ -5293,7 +5185,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: siren
-  displayText: siren
+  clueText: siren
+  snapDistance: 100
 --- !u!114 &1949385927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5349,7 +5242,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -5428,10 +5321,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 582203862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 30.81189, y: -315.1178}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 239, y: -238}
+  m_SizeDelta: {x: -1600, y: -1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &2036322923
 CanvasGroup:
@@ -5458,7 +5351,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: sulfur
-  displayText: sulfur
+  clueText: sulfur
+  snapDistance: 100
 --- !u!114 &2036322925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5514,7 +5408,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -5607,10 +5501,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 582203862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 149.01172, y: 201.307}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 141.5, y: -124.5}
+  m_SizeDelta: {x: -1600, y: -1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2083841485
 MonoBehaviour:
@@ -5651,7 +5545,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClueDraggable
   slotId: minor demon
-  displayText: minor demon
+  clueText: minor demon
+  snapDistance: 100
 --- !u!114 &2083841488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5707,7 +5602,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

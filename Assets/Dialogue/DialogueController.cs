@@ -9,7 +9,7 @@ public class DialogueController : MonoBehaviour
     [Header("UI")]
     public GameObject dialoguePanel;
     public TMP_Text dialogueText;
-    public GameObject openJournalButton; // Reference to the open journal button
+    public GameObject openJournalButton; 
 
     [Header("Typing Settings")]
     public float typingSpeed = 0.05f;
@@ -98,9 +98,10 @@ public class DialogueController : MonoBehaviour
 
         PauseController.SetPaused(false);
 
-        // Reactivate open journal button when dialogue ends
         if (openJournalButton != null)
             openJournalButton.SetActive(true);
+
+        InteractablesManager.Instance?.TriggerInteractionCooldown();
     }
 
     void Update()

@@ -98,7 +98,6 @@ public class PlayerController : MonoBehaviour
     {
         bool paused = PauseController.IsGamePaused;
 
-        // Detect pause JUST happened
         if (paused && !wasPausedLastFrame)
         {
             agent.isStopped = true;
@@ -107,7 +106,6 @@ public class PlayerController : MonoBehaviour
             animator.Play(IDLE);
         }
 
-        // Detect unpause JUST happened
         if (!paused && wasPausedLastFrame)
         {
             agent.isStopped = false;

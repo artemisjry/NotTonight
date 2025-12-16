@@ -7,7 +7,7 @@ using TMPro;
 public class UIButtonHoverColor : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [Header("UI")]
-    public TMP_Text buttonText; // TextMeshPro component
+    public TMP_Text buttonText; 
 
     [Header("Colors")]
     public Color normalColor = Color.white;

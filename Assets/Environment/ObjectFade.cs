@@ -12,7 +12,7 @@ public class ObjectFade : MonoBehaviour
     public Material fadeMaterial;
 
     [Header("Fade Settings")]
-    public float fadedAlpha = 0.3f; // 30%
+    public float fadedAlpha = 0.3f; 
     public float fadeSpeed = 5f;
 
     private class OccluderData
@@ -67,7 +67,6 @@ public class ObjectFade : MonoBehaviour
             }
         }
 
-        // Restore objects no longer blocking the view
         List<Renderer> toRestore = new List<Renderer>();
 
         foreach (var pair in activeOccluders)
@@ -117,7 +116,6 @@ public class ObjectFade : MonoBehaviour
         float startAlpha = mats[0].color.a;
         float t = 0f;
 
-        // Fade back to full opacity
         while (t < 1f)
         {
             t += Time.deltaTime * fadeSpeed;
@@ -133,7 +131,6 @@ public class ObjectFade : MonoBehaviour
             yield return null;
         }
 
-        // Restore original materials
         data.renderer.materials = data.originalMaterials;
     }
 }
