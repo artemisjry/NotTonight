@@ -31,6 +31,9 @@ public class JournalPuzzleManager : MonoBehaviour
     public AudioClip puzzleSolvedSound;
     public float fadeSpeed = 1.2f;
     public float textDelay = 2f;
+
+    public static object Instance { get; internal set; }
+
     // ------------------------------------
 
     void Awake()

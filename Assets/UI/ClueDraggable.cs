@@ -22,7 +22,7 @@ public class ClueDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        originalPosition = rectTransform.position;
+        originalPosition = rectTransform.anchoredPosition;
 
         puzzleManager = FindFirstObjectByType<JournalPuzzleManager>();
         if (puzzleManager == null)
@@ -41,7 +41,7 @@ public class ClueDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.position += (Vector3)eventData.delta;
+        rectTransform.anchoredPosition += eventData.delta / puzzleManager.passageTextTMP.canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -79,25 +79,23 @@ public class ClueDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             return;
         }
 
-        Vector3 slotPos = text.transform.position;
-        if (text.textInfo.characterCount > charIndex)
-        {
-            var charInfo = text.textInfo.characterInfo[charIndex];
-            slotPos = (charInfo.bottomLeft + charInfo.topRight) / 2f;
-            slotPos = text.transform.TransformPoint(slotPos);
-        }
+        // --- FIX: Correct snapping in UI space ---
+        var charInfo = text.textInfo.characterInfo[charIndex];
+        Vector3 worldSlotPos = text.transform.TransformPoint((charInfo.bottomLeft + charInfo.topRight) / 2f);
+        Vector2 screenSlotPos = RectTransformUtility.WorldToScreenPoint(null, worldSlotPos);
+        RectTransform parentRect = rectTransform.parent as RectTransform;
+        Vector2 localSlotPos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRect, screenSlotPos, null, out localSlotPos);
 
-        if (Vector3.Distance(rectTransform.position, slotPos) <= snapDistance)
+        if (Vector2.Distance(rectTransform.anchoredPosition, localSlotPos) <= snapDistance)
         {
-            rectTransform.position = slotPos;
+            rectTransform.anchoredPosition = localSlotPos;
             puzzleManager.FillSlot(slotId, clueText);
 
-            // Snap correct sound
             if (puzzleManager.snapCorrectSound != null && puzzleManager.audioSource != null)
                 puzzleManager.audioSource.PlayOneShot(puzzleManager.snapCorrectSound);
 
             gameObject.SetActive(false);
-            canvasGroup.blocksRaycasts = false;
         }
         else
         {
@@ -108,7 +106,7 @@ public class ClueDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     private void ResetPosition()
     {
-        rectTransform.position = originalPosition;
+        rectTransform.anchoredPosition = originalPosition;
     }
 
     private void PlayIncorrectSound()

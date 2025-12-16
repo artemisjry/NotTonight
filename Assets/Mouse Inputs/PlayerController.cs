@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
             agent.destination = hit.point;
             if (clickEffect != null)
             {
-                var clickObj = Instantiate(clickEffect, hit.point += new Vector3(0, 0.1f, 0), clickEffect.transform.rotation);
+                var clickObj = Instantiate(clickEffect, hit.point += new Vector3(0, 0.01f, 0), clickEffect.transform.rotation);
             }
         }
     }
